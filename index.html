@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery.js"> </script>
+    <script type="text/javascript" src="js/links.js"> </script>
+    <script type="text/javascript" src="js/app.js" async></script>
+    <script src="js/Sortable.js"></script>
+    <title>New Tab - Wavetronix</title>
+  </head>
+  <body class="full-background">
+
+    <header>
+      <div class="header-icons">
+        <i id="settings" class="fa fa-cog fa-lg"></i>
+        <img class="logo" src="images/logo.svg" alt="Wavetronix logo" />
+      </div>
+      <div class="header-right">
+        <h1 id="dayName"></h1>
+        <h2 id="datetime"></h2>
+        <div id="weather-temp"></div>
+        <span>&#176;</span>
+      </div>
+    </header>
+
+    <div id="settings-menu">
+      <h2>Settings</h2>
+
+      <div class="left-settings">
+        <h3>Weather</h3>
+        <div class="weather">
+          <p>Current City: <span class="current-city"></span></p>
+          <div class="weather-form">
+            <input id="city" placeholder="city, state/country" />
+            <button id="add-city">Change City</button>
+          </div>
+        </div>
+        <div id="loading">
+          <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <h3 class="seperate">Personal Links</h3>
+
+
+        <div class="settings-personal-links">
+          <div class="settings-link-section" id="handle">
+            <div id="settings-content">
+              <ul id="settings-personal-links">
+                <li>
+                  <a href="http://www.wavetronix.com">Wavetronix Website</a><button class="removebtn">x</button>
+                </li>
+                <li>
+                  <a href="http://mps.bz/">Breakroom card balance(Revel)</a><button class="removebtn">x</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      
+        <div>
+          <label>Link Title</label>
+          <input id="title" placeholder="Link Title here" />
+        </div>
+        <div>
+          <label>Link URL</label>
+          <input id="url" value="http://" />
+        </div>
+        <button id="add">Add a Personal Link</button>
+      </div>
+
+      <div class="right-settings">
+        <h3>Wavetronix Links</h3>
+        <p>Turn on or off the Wavetronix Links to personalize your experience</p>
+        <ul>
+          <li class="roadway">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Roadway
+          </li>
+          <li class="kbox">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Kbox
+          </li>
+          <li class="saba">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Saba
+          </li>
+          <li class="adp">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            ADP Portal
+          </li>
+          <li class="pto">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            PTO Form - the new one
+          </li>
+          <li class="walkertracker">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Walker Tracker
+          </li>
+          <li class="concur">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Concur
+          </li>
+          <li class="glassfrog">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Glassfrog
+          </li>
+          <li class="facilities">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Facilities email
+          </li>
+          <li class="todoist">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Todoist
+          </li>
+          <li class="fidelity">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            401k
+          </li>
+          <li class="hsa">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            HSA
+          </li>
+          <li class="myhealth">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            My Health
+          </li>
+          <li class="directory">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Employee Directory
+          </li>
+          <li class="quickstart">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Employee Quickstart
+          </li>
+      </div>
+
+      <button id="close-settings">close</button>
+    </div>
+
+    <div class="search">
+      <form method="get" action="http://www.google.com/search">
+        <input type="text" name ="q" class="search-bar" placeholder="Search Google">
+        <input type="submit" class="search-button" value="&#128270;" />
+      </form>
+    </div>
+
+    <main>
+      <div class="main-links">
+        <div class="link-section">
+          <ul class="wavetronix-links">
+            <li id="roadway">
+              <a href="https://wavetronix.sharepoint.com/SitePages/Home.aspx">
+                <h4>Roadway</h4>
+                <h5>Sharepoint</h5>
+              </a>
+            </li>
+            <li id="kbox">
+              <a href="https://kbox.wavetronix.com/">
+                <h4>Kbox</h4>
+                <h5>Helpdesk</h5>
+              </a>
+            </li>
+            <li id="saba">
+              <a href="https://wavetronix.sabacloud.com/Saba/Web_spf/NA3P1PRD0021/local">
+                <h4>Saba</h4>
+              </a>
+            </li>
+            <li id="adp">
+              <a href="http://adp.wavetronix.com">
+                <h4>ADP Portal</h4>
+              </a>
+            </li>
+            <li id="pto">
+              <a href="https://workforcenow.adp.com/portal/theme#/Myself_ttd_MyselfTabPTOCategoryRequestTimeOff/MyselfTabPTOCategoryRequestTimeOff">
+                <h4>PTO form</h4>
+              </a>
+            </li>
+            <li id="walkertracker">
+              <a href="https://wavetronix.walkertracker.com/">
+                <h4>Walker Tracker</h4>
+              </a>
+            </li>
+            <li id="concur">
+              <a href="https://www.concursolutions.com/">
+                <h4>Concur</h4>
+              </a>
+            </li>
+            <li id="glassfrog">
+              <a href="https://glassfrog.com/">
+                <h4>Glassfrog</h4>
+                <h5>Holacracy</h5>
+              </a>
+            </li>
+            <li id="facilities">
+              <a href="mailto:facilitieshelpdesk@wavetronix.com?Subject=Facilities%20Issue" target="_top">
+                <h4>Facilities</h4>
+                <h5>email</h5>
+              </a>
+            </li>
+            <li id="todoist">
+              <a href="https://en.todoist.com">
+                <h4>Todoist</h4>
+              </a>
+            </li>
+            <li id="fidelity">
+              <a href="http://401k.com">
+                <h4>401k</h4>
+                <h5>Fidelity</h5>
+              </a>
+            </li>
+            <li id="hsa">
+              <a href="http://www.healthequity.com">
+                <h4>HSA</h4>
+                <h5>Health Equity</h5>
+              </a>
+            </li>
+            <li id="myhealth">
+              <a href="http://myhealth.intermountainhealthcare.org">
+                <h4>My Health</h4>
+              </a>
+            </li>
+            <li id="directory">
+              <a href="https://wavetronix.sharepoint.com/search/Pages/employees.aspx">
+                <h4>Employee Directory</h4>
+              </a>
+            </li>
+            <li id="quickstart">
+              <a href="https://wavetronix.sharepoint.com/Sites/HR/Shared%20Documents/Wavetronix%20Employee%20Quickstart%20Reference.pdf?csf=1">
+                <h4>Employee Quickstart</h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="personal-links">
+        <div class="link-section" id="handle">
+          <div id="content">
+            <ul id="personal-links">
+              <li>
+                <a href="http://www.wavetronix.com">Wavetronix Website</a><button class="removebtn">X</button>
+              </li>
+              <li>
+                <a href="http://mps.bz/">Breakroom card balance(Revel)</a><button class="removebtn">X</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="photo-caption"></div>
+    </main>
+
+    <!-- <footer><small>You can now rearrange "My Links" by dragging and dropping them in the order you'd like.</small></footer> -->
+  </body>
+</html>
+
