@@ -5,23 +5,15 @@ $(document).ready(function() {
   const $setul = $('#settings-personal-links');
 
   $('#loading').hide();
-
-
   loadLinks();
 
-  
   function loadLinks(){
-    //get items from local storage
     if(localStorage.getItem('wtx')){
         $ul.html(localStorage.getItem('wtx'));
         $setul.html(localStorage.getItem('wtx'));
+    };
+  };
 
-        console.log(localStorage, "this is the lcoal storage")
-    }
-  }
-  
-
-  //get local storage city
   let currentCity = "";
   if(localStorage.getItem('wtx-city')){
       currentCity = localStorage.getItem('wtx-city')
@@ -32,7 +24,7 @@ $(document).ready(function() {
 
   //random background image
   const numOfPhotos = 18;
-  let ranNum = Math.random() * (numOfPhotos - 1) + 1;
+  let ranNum = Math.random() * (numOfPhotos - 1);
   ranNum = Math.ceil(ranNum);
   console.log(ranNum, "this is the random number");
   $('.full-background').css('background-image', 'url(../images/test' + ranNum + '.jpg)');
@@ -45,13 +37,10 @@ $(document).ready(function() {
         photoCaption = "Snowbird Retreat 2016"
     }else if(ranNum == 8 || ranNum == 10){
         photoCaption = "Wavetronix Open House 2016"
-    }else if(ranNum == 12){
-        photoCaption = "HD on Florida Turnpike"
-    }
+    };
 
-    $('#photo-caption').html(photoCaption)
-  //USED FOR TESTING PURPOSES
-  $('.full-background').css('background-image', 'url(../images/backer' + ranNum + '.jpg)');
+    $('#photo-caption').html(photoCaption);
+    $('.full-background').css('background-image', 'url(../images/backer' + ranNum + '.jpg)');
   
   //toggle menu
   $("#settings-menu").hide();
@@ -68,17 +57,13 @@ $(document).ready(function() {
 
   // add new item
   $('#add').click(function () {
-    //add http if it is not there already
     var ini = $url.val().substring(0, 4);
     if (ini !== '' && ini !== 'http'){
         $url.val('http://' + $url.val());
     } 
-    //adds the new item
     $('#personal-links').append('<li><a href="'+$url.val()+'" target="_blank">'+$title.val()+'</a><button class="removebtn">X</button></li>');
-    //saves changes to localstorage
     localStorage.setItem('wtx', $ul.html());
     loadLinks();
-    //resets form
     $title.val("");
     $url.val("http://");
   });
@@ -102,7 +87,6 @@ $(document).ready(function() {
       $('#settings-menu').toggle("slide");
   })
 
-  //api weather request
   getWeather();
 
   function getWeather(){
@@ -141,7 +125,7 @@ $(document).ready(function() {
         }
     }
 
- 
+
     for(let x = 0; x < linkArray.length; x++){
         $('.' + linkArray[x] + ' label').click(function(){
             if($('.' + linkArray[x] + ' input').attr('checked')){
