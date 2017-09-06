@@ -23,24 +23,44 @@ $(document).ready(function() {
   $(".current-city").html(currentCity);
 
   //random background image
-  const numOfPhotos = 18;
-  let ranNum = Math.random() * (numOfPhotos - 1);
-  ranNum = Math.ceil(ranNum);
-  console.log(ranNum, "this is the random number");
-  $('.full-background').css('background-image', 'url(../images/test' + ranNum + '.jpg)');
-    let photoCaption = ""
-    if(ranNum == 1){
-        photoCaption = "Thanksgiving Point Summer Party 2017"
-    }else if(ranNum > 1 && ranNum < 6 ){
-        photoCaption = "Intern Canyoneering 2017";
-    }else if(ranNum == 6 || ranNum == 7 || ranNum == 9 || ranNum == 11){
-        photoCaption = "Snowbird Retreat 2016"
-    }else if(ranNum == 8 || ranNum == 10){
-        photoCaption = "Wavetronix Open House 2016"
-    };
+  if(localStorage.getItem('wtx-background-image') == 0){
+    $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
+    $('.random input').attr('checked', false);
+  }else{
+    $('.random input').attr('checked', true);
+    const numOfPhotos = 18;
+    let ranNum = Math.random() * (numOfPhotos - 1);
+    ranNum = Math.ceil(ranNum);
+    $('.full-background').css('background-image', 'url(../images/test' + ranNum + '.jpg)');
+        let photoCaption = ""
+        if(ranNum == 1){
+            photoCaption = "Thanksgiving Point Summer Party 2017"
+        }else if(ranNum > 1 && ranNum < 6 ){
+            photoCaption = "Intern Canyoneering 2017";
+        }else if(ranNum == 6 || ranNum == 7 || ranNum == 9 || ranNum == 11){
+            photoCaption = "Snowbird Retreat 2016"
+        }else if(ranNum == 8 || ranNum == 10){
+            photoCaption = "Wavetronix Open House 2016"
+        };
 
-    $('#photo-caption').html(photoCaption);
-    $('.full-background').css('background-image', 'url(../images/backer' + ranNum + '.jpg)');
+        $('#photo-caption').html(photoCaption);
+        $('.full-background').css('background-image', 'url(../images/backer' + ranNum + '.jpg)');
+  }
+
+
+  $('.random label').click(function(){
+      if($('.random input').attr('checked')){
+        $('.random input').attr('checked', false);
+        localStorage.setItem('wtx-background-image', "0");
+        $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
+        console.log(localStorage.getItem('wtx-background-image'), "local storage item")
+      }else{
+        $('.random input').attr('checked', true);
+        localStorage.setItem('wtx-background-image', "1");
+        $('.full-background').css('background-image', 'url(../images/backer5.jpg)');
+        console.log(localStorage.getItem('wtx-background-image'), "local storage item if random")
+      }
+  })
   
   //toggle menu
   $("#settings-menu").hide();
@@ -99,7 +119,6 @@ $(document).ready(function() {
     temp = Math.round(temp);
     $('#weather-temp').html(temp);
   }
-
 
     //checklist for wavetronix links
     let array = [];

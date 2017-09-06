@@ -404,6 +404,14 @@ input:checked + .slider:before {
     margin: 0 auto;
   }
 
+  .background {
+    margin-top: 20px;
+  }
+
+  .background .random {
+    margin-top: 10px;
+  }
+
 /* footer ***********************************************************************************/
 
   #photo-caption {
