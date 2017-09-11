@@ -28,53 +28,9 @@
       <h2>Settings</h2>
 
       <div class="left-settings">
-        <h3>Weather</h3>
-        <div class="weather">
-          <p>Current City: <span class="current-city"></span></p>
-          <div class="weather-form">
-            <input id="city" placeholder="city, state/country" />
-            <button id="add-city">Change City</button>
-          </div>
-        </div>
-        <div id="loading">
-          <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-          <span class="sr-only">Loading...</span>
-        </div>
-
-        <h3 class="seperate">Personal Links</h3>
-
-
-        <div class="settings-personal-links">
-          <div class="settings-link-section" id="handle">
-            <div id="settings-content">
-              <ul id="settings-personal-links">
-                <li>
-                  <a href="http://www.wavetronix.com">Wavetronix Website</a><button class="removebtn">x</button>
-                </li>
-                <li>
-                  <a href="http://mps.bz/">Breakroom card balance(Revel)</a><button class="removebtn">x</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      
-        <div>
-          <label>Link Title</label>
-          <input id="title" placeholder="Link Title here" />
-        </div>
-        <div>
-          <label>Link URL</label>
-          <input id="url" value="http://" />
-        </div>
-        <button id="add">Add a Personal Link</button>
-      </div>
-
-      <div class="right-settings">
         <h3>Wavetronix Links</h3>
         <p>Turn on or off the Wavetronix Links to personalize your experience</p>
-        <ul>
+        <ul class="wtx-links">
           <li class="roadway">
             <label class="switch">
               <input type="checkbox">
@@ -181,6 +137,47 @@
             Employee Quickstart
           </li>
         </ul>
+
+        <h3 class="seperate">Personal Links</h3>
+        <div class="settings-personal-links">
+          <div class="settings-link-section" id="handle">
+            <div id="settings-content">
+              <ul id="settings-personal-links">
+                <li>
+                  <a href="http://www.wavetronix.com">Wavetronix Website</a><button class="removebtn">x</button>
+                </li>
+                <li>
+                  <a href="http://mps.bz/">Breakroom card balance(Revel)</a><button class="removebtn">x</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <div>
+          <label>Link Title</label>
+          <input id="title" placeholder="Link Title here" />
+        </div>
+        <div>
+          <label>Link URL</label>
+          <input id="url" value="http://" />
+        </div>
+        <button id="add">Add a Personal Link</button>
+      </div>
+
+      <div class="right-settings">
+        <h3>Weather</h3>
+        <div class="weather">
+          <p>Current City: <span class="current-city"></span></p>
+          <div class="weather-form">
+            <input id="city" placeholder="city, state/country" />
+            <button id="add-city">Change City</button>
+          </div>
+        </div>
+        <div id="loading">
+          <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+          <span class="sr-only">Loading...</span>
+        </div>
         <div class="background">
           <h3>Random Background Setting</h3>
           <div class="random">
@@ -190,8 +187,14 @@
             </label>
             <p>
             Random Marketing and Wavetronix Event Images<br/>
-            <small> (if turned off, background will be simple Wavetronix)</small>
+            <small>if turned off, background will be simple Wavetronix</small>
             </p>
+            <div class="set-own-background">
+              <h3>Set Your Own Background</h3>
+              <input type="file" id="backgroundUpload" />
+              <p>jpg or png files only</p>
+              <button id="remove-background">remove my own background</button>
+            </div>
           </div>
         </div>
       </div>

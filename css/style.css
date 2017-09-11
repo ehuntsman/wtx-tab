@@ -394,22 +394,36 @@ input:checked + .slider:before {
     width: 300px;
   }
 
-  .right-settings li {
+  .wtx-links li {
     height: 30px;
   }
 
-  .right-settings ul {
+  .wtx-links {
     width: 60%;
     text-align: left;
     margin: 0 auto;
   }
 
   .background {
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   .background .random {
     margin-top: 10px;
+  }
+
+  .set-own-background p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .set-own-background input {
+    margin: 5px 0;
+  }
+
+  .background, .set-own-background {
+    padding-top: 15px;
+    border-top: 1px solid dimgrey;
   }
 
 /* footer ***********************************************************************************/

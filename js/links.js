@@ -23,44 +23,77 @@ $(document).ready(function() {
   $(".current-city").html(currentCity);
 
   //random background image
-  if(localStorage.getItem('wtx-background-image') == 0){
-    $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
-    $('.random input').attr('checked', false);
-  }else{
-    $('.random input').attr('checked', true);
-    const numOfPhotos = 18;
-    let ranNum = Math.random() * (numOfPhotos - 1);
-    ranNum = Math.ceil(ranNum);
-    $('.full-background').css('background-image', 'url(../images/test' + ranNum + '.jpg)');
+    if(localStorage.getItem('wtx-background-image') == 0){
+        $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
+        $('.random input').attr('checked', false);
+    }else if(localStorage.getItem('wtx-background-image') == 1){
+        $('.random input').attr('checked', true);
+        const numOfPhotos = 17;
+        let ranNum = Math.random() * (numOfPhotos - 1);
+        ranNum = Math.ceil(ranNum);
+        $('.full-background').css('background-image', 'url(../images/test' + ranNum + '.jpg)');
         let photoCaption = ""
         if(ranNum == 1){
-            photoCaption = "Thanksgiving Point Summer Party 2017"
+        photoCaption = "Thanksgiving Point Summer Party 2017"
         }else if(ranNum > 1 && ranNum < 6 ){
-            photoCaption = "Intern Canyoneering 2017";
+        photoCaption = "Intern Canyoneering 2017";
         }else if(ranNum == 6 || ranNum == 7 || ranNum == 9 || ranNum == 11){
-            photoCaption = "Snowbird Retreat 2016"
+        photoCaption = "Snowbird Retreat 2016"
         }else if(ranNum == 8 || ranNum == 10){
-            photoCaption = "Wavetronix Open House 2016"
+        photoCaption = "Wavetronix Open House 2016"
         };
-
         $('#photo-caption').html(photoCaption);
         $('.full-background').css('background-image', 'url(../images/backer' + ranNum + '.jpg)');
-  }
+    }else{
+        let backgroundImg = localStorage.getItem('wtx-background-image');
+        console.log("cake", backgroundImg, "cake")
+        // $('.full-background').css('background-image', 'url(../images/backer1.jpg)');
+         $('.full-background').css('background-image', 'url("' + backgroundImg + '")');
+    }
 
 
-  $('.random label').click(function(){
-      if($('.random input').attr('checked')){
-        $('.random input').attr('checked', false);
-        localStorage.setItem('wtx-background-image', "0");
-        $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
-        console.log(localStorage.getItem('wtx-background-image'), "local storage item")
-      }else{
-        $('.random input').attr('checked', true);
-        localStorage.setItem('wtx-background-image', "1");
-        $('.full-background').css('background-image', 'url(../images/backer5.jpg)');
-        console.log(localStorage.getItem('wtx-background-image'), "local storage item if random")
-      }
-  })
+    $('.random label').click(function(){
+        if($('.random input').attr('checked')){
+            $('.random input').attr('checked', false);
+            localStorage.setItem('wtx-background-image', "0");
+            $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
+            console.log(localStorage.getItem('wtx-background-image'), "local storage item")
+        }else{
+            $('.random input').attr('checked', true);
+            localStorage.setItem('wtx-background-image', "1");
+            $('.full-background').css('background-image', 'url(../images/backer5.jpg)');
+            console.log(localStorage.getItem('wtx-background-image'), "local storage item if random")
+        }
+    })
+
+    $('#backgroundUpload').change(function(e){
+        let localBackground = e.target.files[0];
+        if(localBackground.type == 'image/jpeg' || localBackground.type == 'image/png'){
+            let reader = new FileReader();
+            reader.onload = (function(theFile){
+                return function(e) {
+                    let img = new Image();
+                    img.src = e.target.result;
+                    $('.full-background').css('background-image', 'url("' + img.src + '")');
+                    $('#settings-menu').toggle("slide");
+                    localStorage.setItem('wtx-background-image', img.src);
+                }
+            })(localBackground);
+            reader.readAsDataURL(localBackground);
+        }
+    })
+
+    $('#remove-background').click(function() {
+        if($('.random input').attr('checked')){
+            localStorage.setItem('wtx-background-image', "1");
+            $('.full-background').css('background-image', 'url(../images/backer5.jpg)');
+        }else{
+            localStorage.setItem('wtx-background-image', "0");
+            $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
+        }
+        $('#settings-menu').toggle("slide");
+    })
+
   
   //toggle menu
   $("#settings-menu").hide();
