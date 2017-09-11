@@ -23,7 +23,7 @@ $(document).ready(function() {
   $(".current-city").html(currentCity);
 
   //random background image
-    if(localStorage.getItem('wtx-background-image') == 0){
+    if(localStorage.getItem('wtx-background-image') == 0 || localStorage.getItem('wtx-background-image') == null){
         $('.full-background').css('background-image', 'url(../images/backer17.jpg)');
         $('.random input').attr('checked', false);
     }else if(localStorage.getItem('wtx-background-image') == 1){
