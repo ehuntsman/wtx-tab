@@ -1,9 +1,10 @@
 # Wavetronix Chrome New Tab Extension
 Created with HTML5, CSS, and E6 Javascript
+
 [Chrome Developer Dashboard](https://chrome.google.com/webstore/developer/dashboard)
 _Unknown if multiple people/accounts can edit same chrome extension._
 
-## View Development on Chrome Extensions##
+## View Development on Chrome Extensions
 In your menu, click Window/Extensions. At the top, click `Developer Mode`. In doin this, you'll allow the option to add your own unpacked extensions to work on.
 
 Click `Load unpacked extension...` and select the folder where the extension is located. The folder will likely be called `wtx-tab` if you cloned from this repository.
