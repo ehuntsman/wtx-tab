@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200');
 @font-face {
     font-family: "Klavika Display";
-    src: url(../font/KlavikaWebBasicLight.woff) format("truetype");
+    src: url(../fonts/KlavikaWebBasicLight.woff) format("truetype");
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -226,6 +233,7 @@ input:checked + .slider:before {
     position: absolute;
     bottom: 0;
     background: rgba(0,0,0,0.5);
+    padding-bottom: 10px;
   }
 
   .main-links {
@@ -430,7 +438,7 @@ input:checked + .slider:before {
 
   #photo-caption {
     text-align: right;
-    margin: -21px 10px 10px 0;
+    margin: -21px 10px 0 0;
     font-size: 12px;
   }
 
