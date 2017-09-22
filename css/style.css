@@ -63,10 +63,14 @@ button {
   display: inline-block;
   width: 43px;
   height: 18px;
-  margin: 0 20px -2px 0;
+  margin: 0 8px -2px 0;
 }
 
 .switch input {display:none;}
+
+.background .switch {
+  margin: 0;
+}
 
 .slider {
   position: absolute;
@@ -230,7 +234,7 @@ input:checked + .slider:before {
   main {
     width: 100vw;
     margin: auto;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background: rgba(0,0,0,0.5);
     padding-bottom: 10px;
@@ -298,15 +302,15 @@ input:checked + .slider:before {
   .settings-personal-links li {
     cursor: move;
     border: 1px solid rgba(255, 255, 255, 0.35);
-    margin: 5px auto;
-    width: 80%;
+    margin: 6px auto;
+    width: 99%;
     text-align: left;
   }
 
   .settings-personal-links a {
-    margin-left: 21px;
-    width: 60%;
-    padding: 10px;
+    margin-left: 16px;
+    width: 78%;
+    padding: 6px 0 3px 12px;
   }
 
   #settings-personal-links li a:before {
@@ -330,7 +334,7 @@ input:checked + .slider:before {
   .settings-personal-links a {
     display: inline-block;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .personal-links a {
@@ -367,17 +371,18 @@ input:checked + .slider:before {
 
 /*  Settings  *************************************************************************/
   #settings-menu {
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.92);
     position: absolute;
     z-index: 5;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0;
     width: 100vw;
+    margin-top: -30px;
   }
 
-  .left-settings, .right-settings {
-    width: 45vw;
+  .left-settings, .middle-settings, .right-settings {
+    width: 32vw;
     display: inline-block;
     vertical-align: top;
   }
@@ -403,13 +408,24 @@ input:checked + .slider:before {
   }
 
   .wtx-links li {
-    height: 30px;
+    height: 26px;
+    font-size: 16px;
   }
 
   .wtx-links {
-    width: 60%;
+    width: 95%;
     text-align: left;
     margin: 0 auto;
+  }
+
+  .wtx-links .switch {
+    height: 14px;
+  }
+
+  .wtx-links .slider::before {
+    height: 8px;
+    width: 8px;
+    bottom: 3px;
   }
 
   .background {
@@ -432,6 +448,9 @@ input:checked + .slider:before {
   .background, .set-own-background {
     padding-top: 15px;
     border-top: 1px solid dimgrey;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 /* footer ***********************************************************************************/
@@ -452,17 +471,6 @@ input:checked + .slider:before {
   color: black;
 }
 
-/*.icon-sidebar{
-  width: 60px;
-  padding: 5px;
-  border: 1px solid red;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  text-align: center;
-}*/
-
 .icons-bottom {
   position: absolute;
   bottom: 0;
@@ -475,10 +483,12 @@ input:checked + .slider:before {
   border:none;
   background: none;
   color: #e7e7e7;
-  margin: 2px 0 0 7px;
+  margin: -9px 0 0 7px;
   cursor: pointer;
-  position: sticky;
-  left: 42%;
+  float: right;
+  color: red;
+  vertical-align: top;
+  padding: 6px 6px 0 0;
 }
 
 .removebtn:hover {

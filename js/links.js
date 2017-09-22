@@ -155,7 +155,7 @@ $(document).ready(function() {
 
     //checklist for wavetronix links
     let array = [];
-    let linkArray = ["roadway", "kbox", "saba", "adp", "pto", "walkertracker", "concur", "glassfrog", "facilities", "todoist", "fidelity", "hsa", "myhealth", "directory", "quickstart"];
+    let linkArray = ["roadway", "kbox", "saba", "adp", "pto", "walkertracker", "concur", "glassfrog", "facilities", "todoist", "fidelity", "hsa", "myhealth", "directory", "quickstart", "powerapp"];
     if(localStorage.getItem("wtx-links-on-off")){
         let temp = localStorage.getItem('wtx-links-on-off');
         temp = JSON.parse(temp);
@@ -164,9 +164,11 @@ $(document).ready(function() {
             if(array[x] == 0){
                 $('.' + linkArray[x] + ' input').attr('checked', false);
                 $('#' + linkArray[x]).hide();
+                console.log(array[x] + "is hidden")
             }else{
                 $('.' + linkArray[x] + ' input').attr('checked', true);
                 $('#' + linkArray[x]).show();
+                console.log(array[x] + "is shown")
             }
         }
     }else {
