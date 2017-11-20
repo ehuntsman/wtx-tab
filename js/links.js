@@ -140,22 +140,10 @@ $(document).ready(function() {
       $('#settings-menu').toggle("slide");
   })
 
-  getWeather();
-
-  function getWeather(){
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", `http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appId=9e3f27be804f6018e3b5c76ba252f06b`, false);
-    xhr.send();
-    let response = JSON.parse(xhr.responseText);
-    let temp = response.main.temp;
-    temp = temp*9/5 - 459.67;
-    temp = Math.round(temp);
-    $('#weather-temp').html(temp);
-  }
 
     //checklist for wavetronix links
     let array = [];
-    let linkArray = ["roadway", "kbox", "saba", "adp", "pto", "walkertracker", "concur", "glassfrog", "facilities", "todoist", "fidelity", "hsa", "myhealth", "directory", "quickstart", "powerapp"];
+    let linkArray = ["roadway", "kbox", "saba", "adp", "pto", "walkertracker", "concur", "glassfrog", "facilities", "todoist", "fidelity", "hsa", "myhealth", "directory", "quickstart", "powerapp", "oldroadway"];
     let localonoff = localStorage.getItem('wtx-links-on-off');
     console.log(localonoff[3], "local first one");
     if(localonoff[1] == 1 || localonoff[1] == 0){

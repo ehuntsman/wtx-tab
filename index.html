@@ -19,8 +19,6 @@
       <div class="header-right">
         <h1 id="dayName"></h1>
         <h2 id="datetime"></h2>
-        <div id="weather-temp"></div>
-        <span>&#176;</span>
       </div>
     </header>
 
@@ -143,6 +141,13 @@
             </label>
             PowerApp Requisition Form
           </li>
+          <li class="oldroadway">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            Old Roadway
+          </li>
         </ul>
       </div>
 
@@ -175,18 +180,6 @@
       </div>
 
       <div class="right-settings">
-        <h3>Weather</h3>
-        <div class="weather">
-          <p>Current City: <span class="current-city"></span></p>
-          <div class="weather-form">
-            <input id="city" placeholder="city, state/country" />
-            <button id="add-city">Change City</button>
-          </div>
-        </div>
-        <div id="loading">
-          <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-          <span class="sr-only">Loading...</span>
-        </div>
         <div class="background">
           <h3>Random Background Setting</h3>
           <div class="random">
@@ -306,6 +299,11 @@
             <li id="powerapp">
               <a href="https://web.powerapps.com/webplayer/app?appId=%2Fproviders%2FMicrosoft.PowerApps%2Fapps%2Ff9825713-f242-4040-8385-f236e3fd6caf&screenColor=rgba%28104%252C%2520101%252C%2520171%252C%25201%29&source=skype">
                 <h4>PowerApp Requisition</h4>
+              </a>
+            </li>
+            <li id="oldroadway">
+              <a href="https://wavetronix.sharepoint.com/SitePages/Home.aspx">
+                <h4>Old Roadway</h4>
               </a>
             </li>
           </ul>

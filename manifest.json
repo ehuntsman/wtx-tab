@@ -1,7 +1,7 @@
 {
   "name": "Wavetronix Tab",
   "description": "Wavetronix tab",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "manifest_version": 2,
   "icons": {
     "128": "images/icon.png"

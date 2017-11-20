@@ -445,7 +445,7 @@ input:checked + .slider:before {
     margin: 5px 0;
   }
 
-  .background, .set-own-background {
+  .set-own-background {
     padding-top: 15px;
     border-top: 1px solid dimgrey;
     width: 90%;
